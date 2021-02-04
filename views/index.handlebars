@@ -3,26 +3,13 @@
 
 
 
-{{!-- <ul>
-  {{#each burger}}
-  {{#unless devoured}}
-  {{> burgers/burgers-block devoured=true}}
-  {{/unless}}
-  {{/each}}
-</ul>
-<li>
-	{{burger_name}}
 
-	<button class="devoured" data-id="{{id}}" data-newsleep="{{sleep}}">
-		{{#if devoured}}Eat more!{{else}}WAKE UP!{{/if}}
-	</button>
 
-	<button class="delete-bugers" data-id="{{this.id}}">DELETE!</button> --}}
 </li>
 <ul><h2>Burgers for you to eat!</h2>
   {{#each burgers}}
     {{#unless devoured}}
-    <li class="each">{{burger_name}} <button class="eat" data-id={{id}}>Devour</button></li>
+    <li class="each">{{id}}. {{burger_name}} <button class="eat" data-id={{id}}>Devour</button></li>
     {{/unless}}
     </li>
     {{/each}}
@@ -32,7 +19,7 @@
 <ul><h2>already eaten!</h2>
   {{#each burgers}}
   {{#if devoured}}
-  <li class ="each">{{burger_name}} 
+  <li class ="each">{{id}}. {{burger_name}} 
   
   {{/if}}
   </li>
@@ -43,48 +30,7 @@
 
 
 
-{{!-- <ul><h2>Burgers fyou have eaten!</h2>
-  {{#each burgers}}
-    {{#if devoured}}
-    <li class="each">{{burger_name}} <button class="eat" data-id={{id}}>Devour</button></li>
-    {{/unless}}
-    </li>
-    {{/each}}
-  </ul> --}}
 
-
-{{!-- <h2>Burgers not eaten!</h2> --}}
-
-{{!-- <h2>burgers eaten!</h2> --}}
-
-{{!-- <ul>
-  {{#each burgers}}
-  {{#if eaten}}
-  {{> burgers/burgers-block devoured=false}}
-  {{/if}}
-  {{/each}}
-</ul> --}}
-
-
-
-{{!-- <ul>
-  {{#each burgers}}
-  <li>
-    <p>ID: {{id}}</p>
-    <p>Burger: {{burger_name}}</p>
-    <p>>Eaten: {{devoured}} </p>
-  </li>
-  {{/each}}
-</ul>
-<ul>
-    {{#each burgers}}
-        <li>{{burger_name}}
-            {{#unless eaten}}
-                <button data-id={{id}} class="eatBtn">Eat me!</button>
-            {{/unless}}
-        </li>
-    {{/each}}
-</ul>  --}}
 <form id="create-form">
 
   <div class="form-group">
