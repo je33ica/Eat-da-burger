@@ -1,21 +1,20 @@
 <h1>Eat-da-burger!</h1>
 
-
-
-
-
 {{!-- displays burgers avaialable with id of 0 --}}
 </li>
 <ul><h2>Burgers for you to eat!</h2>
   {{#each burgers}}
     {{#unless devoured}}
-    <li class="each">{{id}}. {{burger_name}} 
-    <button class="eat" data-id={{id}}>Devour</button></li>
+    <form class= "eatburger">
+    <li value={{id}} class="each">{{id}}. {{burger_name}} 
+
+    
+    <button type="submit" class="eat" {{devoured}} {{id}}>Devour</button></li>
+</form>
     {{/unless}}
     </li>
     {{/each}}
   </ul>
-
 
 {{!-- displays burgers that have been eaten with id of 1 --}}
   </li>
@@ -29,22 +28,18 @@
   {{/each}}
 </ul>
 
+
+
+
+
 <form id="create-form">
 
   <div class="form-group">
     <label for="ca">Add Burger:</label>
     <input type="text" id="newBurger" name="burger_name">
   </div>
-   <button type="submit">XAdd burger</button>
+   <button id="add" type="submit">XAdd burger</button>
 </form> 
 
 
 
-{{!-- 
-  <div class="form-group">
-    <label for="eat">XEat da burger?</label><br>
-    <input type="radio" name="burgers" value="1" id="eaten" Xchecked> XDevoured!<br>
-    <input type="radio" name="burgers" value="0" id="not-eaten"> XEat me!
-  </div> --}}
-
- 
