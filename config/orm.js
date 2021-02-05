@@ -12,7 +12,7 @@ const orm = {
                     throw err;
                 }
                 cb(burgers);
-                 console.log("result in orm", burgers);
+                // console.log("result in orm", burgers);
             });
     },
 
@@ -33,6 +33,13 @@ const orm = {
     // };
     // update(){
 
+
+        update: function (id, cb) {
+            connection.query('UPDATE burgers SET devoured = true WHERE id=' + id + ';', function (err, result) {
+              if (err) throw err;
+              cb(result);
+            })
+          },
     
 };
 
