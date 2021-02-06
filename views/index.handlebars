@@ -1,45 +1,39 @@
 <h1>Eat-da-burger!</h1>
 
-{{!-- displays burgers avaialable with id of 0 --}}
+{{!-- displays burgers avaialable with devoured id of 0,false --}}
 </li>
-<ul><h2>Burgers for you to eat!</h2>
+<ul>
+  <h2>Burgers for you to eat!</h2>
   {{#each burgers}}
-    {{#unless devoured}}
-    <form class= "eatburger">
-    <li value={{id}} class="each">{{id}}. {{burger_name}} 
-
-    
-    <button type="submit" class="eat" {{devoured}} {{id}}>Devour</button></li>
-</form>
-    {{/unless}}
+  {{#unless devoured}}
+  <form class="eatburger">
+    <li value={{id}} class="each">{{id}}. {{burger_name}}
+      <button type="submit" class="eat" {{devoured}} {{id}}>Devour</button>
     </li>
-    {{/each}}
-  </ul>
-
-{{!-- displays burgers that have been eaten with id of 1 --}}
+  </form>
+  {{/unless}}
   </li>
-<ul><h2>already eaten!</h2>
+  {{/each}}
+</ul>
+
+{{!-- displays burgers that have been eaten with devoured id of 1,true --}}
+</li>
+<ul>
+  <h2>already eaten!</h2>
   {{#each burgers}}
   {{#if devoured}}
-  <li class ="each">{{id}}. {{burger_name}} 
-  
-  {{/if}}
+  <li class="each">{{id}}. {{burger_name}}
+
+    {{/if}}
   </li>
   {{/each}}
 </ul>
 
 
-
-
-
-<form id="create-form">
-
-  <div class="form-group">
-    <label for="ca">Add Burger:</label>
-    <input type="text" id="newBurger" name="burger_name">
+<form id="newBurger">
+  <div>
+    <label>Add Burger:</label>
+    <input type="text" id="burger_name" name="burger_name">
   </div>
-   <button id="add" type="submit">XAdd burger</button>
-</form> 
-
-
-
+  <button id="add" type="submit">XAdd burger</button>
+</form>
