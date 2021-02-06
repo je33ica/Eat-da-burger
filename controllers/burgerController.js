@@ -5,31 +5,30 @@ var router = express.Router();
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
   burgers.selectAll(function (burgers) {
-    var hbsObject = {
-      burgers: burgers,
+    var burgersFromDb = {
+      burgers,
     };
-    // console.log("burger from controller ",hbsObject);
-    res.render("index", hbsObject);
+
+    res.render("index", burgersFromDb);
   });
 });
 
-// //create new burger
-// router.post('/api/burgers', (req, res) => {
-//   burgers.create(
-//     req.body.burger_name, (res) => {
-//       // Send back the ID of the new quote
-//       res.render( res );
-//     });
-// });
-
-// updating the burgers that have been devoured
+// updating the burgers- use ID to identify where clicked -
+//devoured will be set to true(1) in the MYSL query in orm
 router.put("/api/burgers/:id", (req, res) => {
   const condition = `id = ${req.params.id}`;
-  console.log("im the condition", condition);
+  // console.log("im the condition", condition);
   burgers.update(req.params.id, function () {
     (result) => {
       result.status(200);
     };
+  });
+});
+
+//create new burger
+router.post("/api/burgers", (req, res) => {
+  burgers.create(req.body.name, (createdBurger) => {
+    res.json(createdBurger);
   });
 });
 
