@@ -43,17 +43,3 @@ const orm = {
 };
 
 module.exports = orm;
-
-// $(".newburger").on("submit", function (e) {
-//     e.preventDefault()
-//     const newBurger = $(this).children(".each").val();
-
-// fetch(`/api/burgers`, {
-//   method: 'POST',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify({newBurger}),
-// }).then(() => {
-//   document.getElementById('.addBurger').value = '';
