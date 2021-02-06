@@ -2,48 +2,58 @@
 const connection = require("../config/connection.js");
 // const { update } = require("../models/burger.js");
 
-
-
 const orm = {
-    selectAll: (tableInput, cb) => {
-        const queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, (err, burgers) => {
-                if (err) {
-                    throw err;
-                }
-                cb(burgers);
-                // console.log("result in orm", burgers);
-            });
-    },
+  selectAll: (tableInput, cb) => {
+    const queryString = "SELECT * FROM " + tableInput + ";";
 
+    connection.query(queryString, (err, burgers) => {
+      if (err) {
+        throw err;
+      }
+      cb(burgers);
+      // console.log("result in orm", burgers);
+    });
+  },
 
-//    create: (table, val, cb) => {
-//     connection.query(`INSERT INTO ${table}` + "(burger_name) VALUES ('" + val + "');",
-       
-//     (err, res) => {
-//             if (err) {
-//                 throw err;
-//             }
-//             cb(res);
-//         })
-//    }
-    
-    // create(){
-
-    // };
-    // update(){
-
-
-        update: function (id, cb) {
-            connection.query('UPDATE burgers SET devoured = true WHERE id=' + id + ';', function (err, result) {
-              if (err) throw err;
-              cb(result);
-            })
-          },
-    
+  // updating where id matches and if matches then we change the devoured
+  //to true(1) and then this will change where it is displayed using handlebars
+  update: (id, cb) => {
+    connection.query(
+      "UPDATE burgers SET devoured = true WHERE id=" + id + ";",
+      function (err, result) {
+        if (err) throw err;
+        cb(result);
+      }
+    );
+  },
+  //had an issue but now fixed where i was passing in the burger name as the 2nd parameter which shoudl have been the cb
+  create: (name, cb) => {
+    connection.query(
+      "INSERT INTO burgers SET ?",
+      {
+        burger_name: name,
+        devoured: false,
+      },
+      function (err, result) {
+        if (err) throw err;
+        cb(result);
+      }
+    );
+  },
 };
-
-
 
 module.exports = orm;
 
+// $(".newburger").on("submit", function (e) {
+//     e.preventDefault()
+//     const newBurger = $(this).children(".each").val();
+
+// fetch(`/api/burgers`, {
+//   method: 'POST',
+//   headers: {
+//     Accept: 'application/json',
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({newBurger}),
+// }).then(() => {
+//   document.getElementById('.addBurger').value = '';
