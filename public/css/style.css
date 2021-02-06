@@ -1,20 +1,40 @@
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
-  
+/* #ready {
+  float: left;
+  background-color: blanchedalmond;
+  color: black;
+  padding: 5px;
+}
+#gone {
+  float: right;
+  background-color: blanchedalmond;
+  color: grey;
+  padding: 5px;
+} */
+
+.form-group {
+  margin-bottom: 5px;
+}
+body {
+  background-color: rgb(240, 175, 77);
+  align-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#adding {
+  display: relative;
+  justify-content: center;
+}
+.all {
+  justify-content: center;
+  display: table;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style-type: none;
+}
+h1 {
+  display: inline;
+}
+button {
+  margin: 1%;
+}
