@@ -28,4 +28,32 @@ h1 {
 }
 button {
   margin: 1%;
+  background: rgba(255, 194, 62, 0.9);
+  border-radius: 4px;
+}
+.card {
+  background: rgba(255, 194, 62, 0.7);
+  width: 90%;
+}
+.eat {
+  float: right;
+}
+h2 {
+  text-align: center;
+}
+.col-xs-1 {
+  margin: 5%;
+  background: rgba(255, 194, 62, 0.5);
+}
+li {
+  display: flow-root;
+}
+
+#burger_name {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  text-align: center;
+}
+#eaten {
+  color: rgb(97, 98, 98);
 }
