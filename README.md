@@ -1,6 +1,6 @@
-# Eat-da-burger
+# Eat-da-burger :hamburger: :fries:
 
-# This README has been licensed using : :hamburger: :fries:
+# This README has been licensed using : 
 
 [![License Badge](https://img.shields.io/static/v1?label=License&message=MIT&color=blue)]
 
