@@ -49,4 +49,4 @@ Contact Jessica with any questions at
 
 # [![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)]
 
-<img width="487" alt="Screenshot 2021-02-05 at 20 58 52" src="https://user-images.githubusercontent.com/67834752/107147791-ceea7b00-6947-11eb-8fc0-6208d38c14a4.png">
+
