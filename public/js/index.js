@@ -38,4 +38,21 @@ $(document).ready(function () {
       });
     });
   }
+
+  //delete burger using form ID
+  const deleteEl = document.querySelectorAll(".delete");
+  console.log("button clicked", deleteEl);
+  deleteEl.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const idDelete = e.target.getAttribute("data-id");
+      console.log("button clicked", deleteEl);
+      // Send the delete request
+      fetch(`/api/burgers/${idDelete}`, {
+        method: "DELETE",
+      }).then(() => {
+        // Reload the page
+      });
+      location.reload();
+    });
+  });
 });

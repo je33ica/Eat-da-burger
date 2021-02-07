@@ -14,6 +14,9 @@ const burgers = {
   update(id, cb) {
     orm.update(id, cb);
   },
+  delete(name, cb) {
+    orm.delete(name, cb);
+  },
 };
 
 // Export the database functions for the controller

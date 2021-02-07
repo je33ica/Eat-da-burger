@@ -31,4 +31,15 @@ router.post("/api/burgers", (req, res) => {
   });
 });
 
+router.delete("/api/burgers/:id", (req, res) => {
+  const condition = `${req.params.id}`;
+  console.log("im the condition in b controller", condition);
+  burgers.delete(condition, (result) => {
+    if (result.affectedRows === 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    }
+    res.status(200).end();
+  });
+});
 module.exports = router;

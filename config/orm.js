@@ -40,6 +40,17 @@ const orm = {
       }
     );
   },
+  delete: (id, cb) => {
+    connection.query(
+      "DELETE FROM burgers WHERE id = ? ",
+      id,
+      console.log("im the id", id),
+      function (err, result) {
+        if (err) throw err;
+        cb(result);
+      }
+    );
+  },
 };
 
 module.exports = orm;

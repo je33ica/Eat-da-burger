@@ -21,6 +21,7 @@
               <li value={{id}} class="each">{{id}}. {{burger_name}}
                 <button type="submit" class="eat" {{devoured}} {{id}}>Devour <i
                     class="far fa-grin-tongue fa-sm"></i></button>
+
               </li>
             </form>
             {{/unless}}
@@ -42,6 +43,7 @@
               {{#each burgers}}
               {{#if devoured}}
               <li class="each">{{id}}. {{burger_name}}
+                <button class="delete" data-id="{{this.id}}">Bin it <i class="far fa-trash-alt fa-sm"></i></button>
                 {{/if}}
               </li>
               {{/each}}
