@@ -13,11 +13,6 @@
 - [Installation](#instalation)
 - [Usage](#usage)
 
-- [License](#license)
-
-- [Contributing](#contributing)
-- [Tests](#tests)
-
 - [Language](#language)
 
 - [Questions](#questions)
@@ -33,14 +28,7 @@ npm install
 ## Usage:
 
 - Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
-
-## The following license has been used:
-
-MIT
-
-## Contribute:
-
-- Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
+-Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
 
 ## Github:
 
